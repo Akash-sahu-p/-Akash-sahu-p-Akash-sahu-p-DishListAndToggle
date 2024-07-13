@@ -28,7 +28,7 @@ const toggleStatus = async (req, res) => {
 };
 
 const directtoggleDishStatus = async (id) => {
-  const dish = await Dish.findById(id);
+  const dish = await Dish.findOne({dishId:id});
   if (!dish) {
     throw new Error('Dish not found in database');
   }
